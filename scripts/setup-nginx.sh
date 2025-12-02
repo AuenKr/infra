@@ -55,12 +55,14 @@ for FILE in "${FILES[@]}"; do
   BASENAME=$(basename "$FILE")
   TARGET="$SYSTEM_SITES_ENABLED/$BASENAME"
 
-  if [ -L "$TARGET" ]; then
+  if [ -L "$TARGET" ] && [ -e "$TARGET" ]; then
     echo "✔ Already linked: $BASENAME"
   else
-    echo "🔗 Linking: $BASENAME"
+    echo "🔗 (Re)linking: $BASENAME"
+    sudo rm -f "$TARGET"
     sudo ln -s "$FILE" "$TARGET"
   fi
+
 done
 
 # Validate Nginx config
