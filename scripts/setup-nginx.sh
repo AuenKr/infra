@@ -5,7 +5,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Nginx repo root = one directory up
-NGINX_DIR="$SCRIPT_DIR/.."
+NGINX_DIR="$SCRIPT_DIR/../nginx"
 
 # Repo paths
 REPO_NGINX_CONF="$NGINX_DIR/nginx.conf"
