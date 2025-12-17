@@ -1,4 +1,5 @@
 server {
+    # Vaiables ONLY for runtime variables like proxy_pass (Not listen 80)
     set $PORT 5678;
     set $SERVER_HOST 127.0.0.1;
 

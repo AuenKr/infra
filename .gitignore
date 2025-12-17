@@ -3,3 +3,6 @@ local-files/
 
 # pgdata
 pgdata/
+
+# Copy of existing config 
+sites-enabled-copy/
