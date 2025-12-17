@@ -1,2 +1,5 @@
 # n8n volumes
 local-files/
+
+# pgdata
+pgdata/
