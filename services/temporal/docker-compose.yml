@@ -2,6 +2,7 @@ version: "3.5"
 services:
   postgresql:
     container_name: temporal-postgresql
+    restart: unless-stopped
     environment:
       POSTGRES_PASSWORD: temporal
       POSTGRES_USER: temporal
@@ -17,6 +18,7 @@ services:
         max-file: "3"
   temporal:
     container_name: temporal
+    restart: unless-stopped
     depends_on:
       - postgresql
     environment:
@@ -43,6 +45,7 @@ services:
 
   temporal-ui:
     container_name: temporal-ui
+    restart: unless-stopped
     depends_on:
       - temporal
     environment:
