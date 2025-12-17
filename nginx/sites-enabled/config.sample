@@ -1,6 +1,6 @@
 server {
     set $PORT 5678;
-    set $HOST 127.0.0.1;
+    set $SERVER_HOST 127.0.0.1;
 
     listen 80;
     listen [::]:80;
@@ -8,7 +8,7 @@ server {
     server_name n8n.auenkr.com;
 
     location / {
-        proxy_pass http://$HOST:$PORT;
+        proxy_pass http://$SERVER_HOST:$PORT;
 
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
