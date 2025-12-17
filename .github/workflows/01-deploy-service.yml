@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy the frontend and backend
+      - name: Deploy the infra on machine
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.HOST }}
