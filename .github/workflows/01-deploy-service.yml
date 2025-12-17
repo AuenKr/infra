@@ -1,0 +1,21 @@
+name: Deploy to Meleti Server
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the frontend and backend
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd ~/infra
+            git pull origin main
+            cd ./scripts
+            ./setup-docker-service.sh && ./setup-nginx.sh
