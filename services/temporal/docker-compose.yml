@@ -35,6 +35,7 @@ services:
       - temporal-network
     ports:
       - 7233:7233
+      - 7090:9090 # metrics
     volumes:
       - ./dynamicconfig:/etc/temporal/config/dynamicconfig
     logging:
